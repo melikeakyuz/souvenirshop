@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    
+                    <div class="preview-pic tab-content">
+                      <div class="tab-pane active" id="pic-1"><img src="{{productDetail.ImageURL}}" /></div>
+                     
+                    </div>
+                    
+                    
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">{{productDetail.ProductDescription}}</h3>
+                    <div class="rating">
+                        <div *ngFor="let number of [0,1,2,3,4];let i = index" style="display: inline;">
+                            <span *ngIf="i<productDetail.AverageCustomerRating" class="fa fa-star checked"></span>
+                            <span *ngIf="i>=productDetail.AverageCustomerRating" class="fa fa-star unchecked"></span>
+                          </div>
+                          <br>
+                        <span class="review-no">{{productDetail.AverageCustomerRating*productDetail.ProductID}} reviews</span>
+                    </div>
+                    <p class="product-description">Add this product to your cart as soon as possible to gift this product to your loved ones.</p>
+                    <h4 class="price">current price: <span>{{productDetail.Price}} TL</span></h4>
+                    <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                    
+                        <label>Color:  </label>
+                        <select id="cars">
+                            <option value="Small">Red</option>
+                            <option value="Medium">Black</option>
+                            <option value="Large">White</option>
+                            <option value="Medium">Grey</option>
+                            <option value="Large">Orange</option>
+                            
+                          </select>
+                    <div style="padding-top: 15px;">
+                        <button style="background-color: orange;color: white;float:right;" (click)="addBasket()">Add to Basket</button>
+
+                    </div>
+                    
+                    
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

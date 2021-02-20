@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row"></div>
+  <ngb-carousel style="padding-bottom: 25px; padding-left: 30px;">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img
+          src="/assets/commercial1.jpg"
+          alt="Random first slide"
+           style="height: 450px;
+           width: 100%;"
+        />
+      </div>
+     
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img
+          src="/assets/commercial2.jpg" 
+          alt="Random second slide"
+          style="height: 450px;
+           width: 100%;"
+        />
+      </div>
+      
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img
+         src="/assets/commercial3.jpg"
+          alt="Random third slide"
+          style="height: 450px;
+           width: 100%;"
+        />
+      </div>
+     
+    </ng-template>
+  </ngb-carousel>
+
+  
+      <div class="row">
+        <div class="col-md" *ngFor="let item of filterProducts">
+          <button class="bestproduct" (click)="clickButton($event, item)">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="{{ item.ImageURL }}"
+                alt="Card image cap"
+                style="width: 220px; height: 180px;"
+              />
+              <div class="card-body">
+                <p class="card-text">{{ item.ProductDescription }}</p>
+                <div
+                  *ngFor="let number of [0, 1, 2, 3, 4]; let i = index"
+                  style="display: inline;"
+                >
+                  <span
+                    *ngIf="i < item.AverageCustomerRating"
+                    class="fa fa-star checked"
+                  ></span>
+                  <span
+                    *ngIf="i >= item.AverageCustomerRating"
+                    class="fa fa-star unchecked"
+                  ></span>
+                </div>
+
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="float: right;"
+                >
+                  <p class="amount">{{ item.Price }} $</p>
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    
+</div>

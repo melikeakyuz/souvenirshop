@@ -1,0 +1,77 @@
+body{
+    font-size:14px;
+    color:black;
+  }
+  
+  
+  .colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  }
+  .simple-login-container{
+    width:300px;
+    max-width:100%;
+    margin:auto auto;
+  }
+  .simple-login-container h2{
+    color:orange;
+    text-align:center;
+    font-size:20px;
+  }
+  
+  .simple-login-container .btn-login{
+    background-color:#FF5964;
+    color:#fff;
+  }
+  a{
+    color: green;
+  }
+  .button{
+    border-radius: 5px;
+    background-color: orange;
+    color:white;
+    padding: 20px;
+    padding: 4px 60px;
+    margin-left: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  /* the image */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 40%;
+    border-radius: 40%;
+  }
+  
+  .rememberme {
+    background-color: white;
+    color: black;
+    margin: 24px 0 12px 0;
+    margin-left: 96px;
+  }
+  
+  .account{
+    float: right;
+    padding-top: 16px;
+    color: black;
+    margin-right:42px;
+    font-size: 100%;
+  }
+  span.psw {
+    float: right;
+    color: black;
+    padding-top: 16px;
+    margin-left:112px;
+  }
+  

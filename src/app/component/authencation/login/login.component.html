@@ -1,0 +1,44 @@
+
+<body>
+    <head><link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script></head>
+    <div class="simple-login-container">
+      <h2>Welcome back! Please sign in. </h2>
+      <hr class="colorgraph">
+      <div class="imgcontainer">
+        <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" alt="Avatar" class="avatar">
+    </div>
+      <div class="row">
+          <div class="col-md-12 form-group">
+              <input [(ngModel)]="customer.Email_Address" type="text" class="form-control" placeholder="Mail">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 form-group">
+              <input [(ngModel)]="customer.Password" type="password" placeholder="Password" class="form-control">
+              <label *ngIf="isLoginError" style="color: red;">{{errorMessage}}</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="button">
+        <button type="submit" class="button" (click)="savecustomer()">LOGIN</button>
+      </div>
+    </div>
+      <hr class="colorgraph">
+        <label>
+          <input type="checkbox" class="rememberme" checked="checked" name="remember"> Remember me </label>
+          
+          
+          <div class="form-group">                             
+            <div class="account"> Don't have an account! 
+            <a href="/register" onClick="">Sign Up Here</a>
+            </div>
+        
+    </div> 
+      <div class="row">
+        <span class="psw"> <a href="#">Forgot password?</a></span>
+      </div>
+      <div class="form-group"></div>
+    </div>
+    </body>

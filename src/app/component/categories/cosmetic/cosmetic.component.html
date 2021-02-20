@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      
+      <h5>Gender</h5  >
+     
+<label class="genderclass">Woman
+  <input *ngIf="!isMan" type="checkbox" [(ngModel)]="isWoman" (change)="clickGender(isChecked?'A':'B')">
+  <span class="checkmark"></span>
+</label>
+<label class="genderclass">Man
+  <input *ngIf="!isWoman"type="checkbox"  [(ngModel)]="isMan" (change)="clickGender(isChecked?'A':'B')">
+  <span class="checkmark"></span>
+</label>
+
+<br>
+
+  
+  <h5>Color</h5>
+ 
+  <label class="genderclass">Red
+    <input *ngIf="!isBlack&&!isWhite&&!isOrange&&!isGrey" type="checkbox"  [(ngModel)]="isRed" (change)="clickColor(isChecked?'A':'B')">
+    <span  class="checkmark" style="background-color: red;"></span>
+  </label>
+  <label class="genderclass">Black
+    <input *ngIf="!isRed&&!isWhite&&!isOrange&&!isGrey" type="checkbox" [(ngModel)]="isBlack" (change)="clickColor(isChecked?'A':'B')">
+    <span  class="checkmark" style="background-color:black;"></span>
+  </label>
+  <label class="genderclass">White
+    <input *ngIf="!isBlack&&!isRed&&!isOrange&&!isGrey" type="checkbox" [(ngModel)]="isWhite" (change)="clickColor(isChecked?'A':'B')">
+    <span class="checkmark" style="background-color: white; border: solid black;"></span>
+  </label>
+  <label class="genderclass">Grey
+    <input *ngIf="!isBlack&&!isWhite&&!isOrange&&!isRed" type="checkbox" [(ngModel)]="isGrey" (change)="clickColor(isChecked?'A':'B')">
+    <span class="checkmark" style="background-color:grey;"></span>
+  </label>
+  <label class="genderclass">Orange
+    <input *ngIf="!isBlack&&!isWhite&&!isRed&&!isGrey" type="checkbox" [(ngModel)]="isOrange" (change)="clickColor(isChecked?'A':'B')">
+    <span class="checkmark" style="background-color:orange;"></span>
+  </label>
+  
+  <br>
+  <h5>Amount</h5 >
+    
+    <label class="genderclass">0-500 $
+      <input *ngIf="!isSecondRange&&!isThirdRange&&!isFourthRange" type="checkbox" [(ngModel)]="isFirstRange" (change)="clickPrice(isChecked?'A':'B')">
+      <span class="checkmark"></span>
+    </label>
+    <label class="genderclass">500-1100 $
+      <input *ngIf="!isFirstRange&&!isThirdRange&&!isFourthRange" type="checkbox"   [(ngModel)]="isSecondRange" (change)="clickPrice(isChecked?'A':'B')">
+      <span class="checkmark"></span>
+    </label>
+    <label class="genderclass">1500-3000 $
+      <input *ngIf="!isFirstRange&&!isSecondRange&&!isFourthRange"type="checkbox"  [(ngModel)]="isThirdRange" (change)="clickPrice(isChecked?'A':'B')"> 
+      <span class="checkmark"></span>
+    </label>
+    <label class="genderclass">3000- $
+      <input *ngIf="!isFirstRange&&!isSecondRange&&!isThirdRange"type="checkbox"   [(ngModel)]="isFourthRange" (change)="clickPrice(isChecked?'A':'B')"> 
+      <span class="checkmark"></span>
+    </label>
+    
+    <button (click)="filter()">Filter</button>
+      
+  
+    </div> 
+    <div class="col-9" >
+      <div class="row" >
+        <div class="col-md" *ngFor="let item of filterProducts">
+          <button class="bestproduct" (click)="clickButton($event,item)">          
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{item.ImageURL}}" alt="Card image cap" style="width: 220px;height: 180px;">
+            <div class="card-body">
+              <p class="card-text">{{item.ProductDescription}}</p>
+              <div *ngFor="let number of [0,1,2,3,4];let i = index" style="display: inline;">
+                <span *ngIf="i<item.AverageCustomerRating" class="fa fa-star checked"></span>
+                <span *ngIf="i>=item.AverageCustomerRating" class="fa fa-star unchecked"></span>
+              </div>
+              
+              <div class="d-flex justify-content-between align-items-center" style="float: right;">
+                <p class="amount">{{item.Price}} $</p>
+                </div>
+           
+            </div>
+          </div>
+          </button>
+        </div>
+  
+     
+      </div>
+    </div>
+  </div>
+
+</div>

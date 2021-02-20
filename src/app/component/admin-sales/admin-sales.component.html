@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+    <div class="main_content">
+        <div class="header">  Welcome to sales page!
+           
+         </div>  
+
+        <table>
+            <tr>
+                <th><div class="col-7 box-shadow">Date of Sale</div></th>
+                <th><div class="col-7 box-shadow">Buyer</div></th>
+                <th><div class="col-7 box-shadow">How many</div></th>
+                <th><div class="col-7 box-shadow">Rating Information</div></th>
+            </tr>
+            <tr *ngFor="let item of sales">
+                <td> <div class="element"> {{item.DateofSale}} </div> </td>
+                <td> <div class="element"> {{item.UserID}} </div> </td>
+                <td> <div class="element"> {{item.Howmanyproductssold}}</div> </td>
+                <td> <div class="element"> {{item.RatingInformation}}</div> </td>
+
+                <td><button class="button" (click)="clickUpdate($event,item)">Update</button></td>
+                <td><button class="button"  (click)="clickDelete($event,item)">Delete</button></td>
+            </tr>
+    </table>
+
+
+
+   
+
+</div>
+</body>
+</html>

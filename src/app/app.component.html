@@ -1,0 +1,53 @@
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<div class="wrapper">
+  <div class="top_nav">
+      <div class="left">
+        <div class="logo"><p><span>Souvenir</span>Shop</p></div>
+        <div class="search-box-container"  style="padding-left: 250px;">
+          
+            <input class="search-box"type="text" style="border-radius: 15px;width: 440px;border-color: orange;padding-left: 5px;height: 35px;" placeholder="Aradığınız ürün, kategori veya markayı yazınız">
+            <i class="fas fa-search" style="color: orange;"></i>
+        </div>
+    </div> 
+    <div class="right">
+      <ul>
+        
+        
+          <div class="row">
+            <a *ngIf="isAdmin" class="active" href="/admin-product"><i class="fas fa-user"></i> Admin</a>
+            <a *ngIf="!deneme" class="active" href="/login"><i class="fas fa-user"></i> Login</a>
+            <a *ngIf="deneme "class="active" href="#" (click)="logout()" ><i class="fas fa-user"></i> Logout</a>
+            <a *ngIf="isBasketHaveProduct" class="active" href="/basket"><i class="fas fa-shopping-basket"></i> Basket({{basketLength}})</a>
+            <a *ngIf="!isBasketHaveProduct" class="active" href="/basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+          </div>
+     
+        
+       
+      </ul>
+    </div>
+  </div>
+  <div class="bottom_nav">
+    <ul>
+      <li><a href="/woman">WOMAN</a></li>
+      <li><a href="/man">MAN</a></li>
+      <li><a href="/child">CHILD</a></li>
+      <li><a href="/homelife">HOME & LIFE</a></li>
+      <li><a href="/cosmetic">COSMETIC</a></li>
+      <li><a href="/shoebag">SHOE & BAG</a></li>
+      <li><a href="/watchesaccessories">WATCHES & ACCESSORIES</a></li>
+      <li><a href="/electronic">ELECTRONIC</a></li>
+    </ul>
+  </div>
+
+   
+  
+
+    <main style="padding-top: 25px;">
+      
+      <router-outlet></router-outlet>
+    </main>
+    
+  </div>
+    
+  

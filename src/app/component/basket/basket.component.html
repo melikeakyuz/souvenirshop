@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+    <h5>Sepetim ({{basketProducts.length}} Ürün)</h5>
+    <a href="/home" style="color: orange;margin-left: 340px;font-style: italic;
+    font-family: fantasy;">Alışverişe Devam Et</a>
+    </div>
+    <div class="row">
+        <div class="col-7 " >
+            <div class="row colseven" *ngFor="let item of basketProducts">
+                <div class="col-2 product">
+                    <img class="productimage" src="{{item.ImageURL}}">
+                </div>
+                <div class="col-8 description">
+                   Description:{{item.ProductDescription}}<br>
+                   Color:{{item.Color}}<br>
+                   Price:{{item.Price}} TL <br>
+                   Estimated Delivery Date:{{startDate| date:'dd-MM-yyyy'}}-{{endDate| date:'dd-MM-yyyy'}}                  
+                </div>
+                <div class="col-2" style="margin-top: 50px;">
+                    <button style="background-color:orange;color: white;"  (click)="deleteBasketItem(item)" >Delete</button>
+                 </div>
+                
+            </div>
+           
+
+        </div>
+        <div class="col-3 totalamount"> 
+            <button (click)="goPayment()" style="background-color: orange;float: center;color:white;font-family:'bold';width: 100%;"> Confirm Basket ></button>
+
+            <div style="border:solid 1px grey;text-align: center;margin-top: 25px;">
+                <h5>Order Summary</h5>
+                <p>Total Amount: {{totalAmount}} TL</p>
+            </div>
+           <br>
+           <button (click)="goPayment()" style="background-color: orange;float: center;color:white;font-family:'bold';width: 100%;"> Confirm Basket ></button>
+
+        </div>
+       
+        
+      
+        
+       
+    </div>
+</div>

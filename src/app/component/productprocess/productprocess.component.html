@@ -1,0 +1,73 @@
+
+<head>
+  <meta charset="UTF-8">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">  
+</head>
+<body>
+  <div class="form-box"><h2>Product Process</h2></div>
+  
+
+  <form class="form-horizontal">
+
+    <div class="form-group">
+      <label class="col-sm-5 control-label">Price</label>
+      <div class="col-sm-2 ">
+        <input [(ngModel)]="updateProduct.Price" class="form-control" name="price" type="number" value="" placeholder="2500">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-5 control-label">Product Type</label>
+      <div class="col-sm-2">
+        <input [(ngModel)]="updateProduct.Type" class="form-control" name="type" type="text" value="" placeholder="Electronic">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-5 control-label">Product Description</label>
+      <div class="col-sm-2">
+        <input [(ngModel)]="updateProduct.ProductDescription" class="form-control" name="description" type="text" value="" placeholder="Asus Desktop">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-5 control-label">Color</label>
+      <div class="col-sm-2">
+        <input [(ngModel)]="updateProduct.Color" class="form-control" name="color" type="text" value="" placeholder="Red">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-5 control-label">Gender</label>
+      <div class="col-sm-2">
+        <input [(ngModel)]="updateProduct.Gender" class="form-control" name="gender" type="text" value="" placeholder="Woman/Man/Unisex">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-5 control-label">Image</label>
+      <div class="col-sm-2">
+        <input [(ngModel)]="updateProduct.ImageURL" class="form-control" name="ımage" type="text" value="" placeholder="assets/">
+      </div>
+      
+     
+      
+    </div>
+    <div class="form-group">
+      
+        <button *ngIf="!isAdd" type="submit" class="buttonUpdate" (click)="updateDb(product)" href="/admin-product">Update</button>
+        <button *ngIf="isAdd" type="submit" class="buttonAdd" (click)="addDb()" href="/admin-product">Add</button>
+     
+     
+      
+    </div>
+    <div class="form-group" >
+      <div>
+        <label style="text-align: center;background-color: greenyellow;" class="col-sm-5 control-label">Fill in the fields in accordance with the above format. Your image file should be in the "assets /" folder.</label>
+
+      </div>
+     
+      
+     
+      
+    </div>
+  </form>
+
+
+</body>
+

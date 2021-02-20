@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+    <div class="main_content">
+        <div class="header">  Welcome to product page!
+     
+            <button class="button-insert" (click)="clickInsert()">Insert new product</button>
+         </div>  
+         <label for="cars">Select Category Types: </label>
+
+         <select id="cars"(change)="onChange($event.target.value)">
+           <option value="Electronic" selected >ELECTRONIC</option>
+           <option value="HomeLife">HOME&LIFE</option>
+           <option value="Cosmetics">COSMETIC</option>
+           <option value="ShoesBag">ShoesBag</option>
+           <option value="Accessories">WATCHES & ACCESSORIES</option>
+           
+
+         </select>
+        <table>
+            <tr>
+                <th><div class="col-7 box-shadow">Product</div></th>
+                <th><div class="col-7 box-shadow">Description</div></th>
+                <th><div class="col-7 box-shadow">Color</div></th>
+                <th><div class="col-7 box-shadow">Gender</div></th>
+                <th><div class="col-7 box-shadow">Type</div></th>
+                <th><div class="col-7 box-shadow">Price</div></th>
+                <th><div class="col-7 box-shadow">Rating</div></th>
+            </tr>
+            <tr *ngFor="let item of products">
+                <td>
+                    <div class="col-7 box-shadow">
+                        <img class="colseven"  src="{{item.ImageURL}}">
+                    </div>
+                </td>
+                <td> <div class="element"> {{item.ProductDescription}} </div> </td>
+                <td> <div class="element"> {{item.Color}} </div> </td>
+                <td> <div class="element"> {{item.Gender}}</div> </td>
+                <td> <div class="element"> {{item.Type}} </div> </td>
+                <td> <div class="element"> ${{item.Price}} </div> </td>
+                <td class="element"><div *ngFor="let number of [0,1,2,3,4];let i = index" style="display: inline;">
+                    <span *ngIf="i<item.AverageCustomerRating" class="fa fa-star checked"></span>
+                    <span *ngIf="i>=item.AverageCustomerRating" class="fa fa-star unchecked"></span>
+                </div></td>
+                <td><button class="button" (click)="clickUpdate($event,item)" href="/admin-product">Update</button></td>
+                <td><button class="button" (click)="clickDelete($event,item)" href="/admin-product">Delete</button></td>
+            </tr>
+    </table>
+
+
+
+   
+
+</div>
+</body>
+</html>

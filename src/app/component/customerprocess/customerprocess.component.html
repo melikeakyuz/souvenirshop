@@ -1,0 +1,57 @@
+<head>
+    <meta charset="UTF-8">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">  
+  </head>
+  <body>
+    <div class="form-box"><h2>Customer Process</h2></div>
+    
+  
+    <form class="form-horizontal">
+  
+      <div class="form-group">
+        <label class="col-sm-5 control-label">Name</label>
+        <div class="col-sm-2 ">
+          <input [(ngModel)]="updateCustomer.Name" class="form-control" name="name" type="text" value="" placeholder="2500">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">Surname</label>
+        <div class="col-sm-2">
+          <input [(ngModel)]="updateCustomer.Surname" class="form-control" name="surname" type="text" value="" placeholder="Electronic">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">Email Address</label>
+        <div class="col-sm-2">
+          <input [(ngModel)]="updateCustomer.Email_Address" class="form-control" name="email" type="text" value="" placeholder="Asus Desktop">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">Password</label>
+        <div class="col-sm-2">
+          <input [(ngModel)]="updateCustomer.Password" class="form-control" name="password" type="text" value="" placeholder="Red">
+        </div>
+      </div>
+   
+      <div class="form-group">
+        
+          <button *ngIf="!isAdd" type="submit" class="buttonUpdate" (click)="updateDb(customer)" href="/admin-customer">Update</button>
+          <button *ngIf="isAdd" type="submit" class="buttonAdd" (click)="addDb()" href="/admin-customer">Add</button>
+       
+       
+        
+      </div>
+      <div class="form-group" >
+        <div>
+
+  
+        </div>
+       
+        
+       
+        
+      </div>
+    </form>
+  
+  
+  </body>

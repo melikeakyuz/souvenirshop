@@ -1,0 +1,63 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="row">
+		<div class="form-box">
+        <h1>Registration</h1>
+        <hr class="colorgraph">
+
+    	    <form role="form" id="contact-form">
+            <!-- name field -->
+            <div class="form-group">
+                <label for="name" class="sr-only" >Name</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input [(ngModel)]="customer.Name" type="text" class="form-control" name="name" id="name"  placeholder="Name"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="sr-only" >Surname</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input [(ngModel)]="customer.Surname" type="text" class="form-control" name="surname" id="surname"  placeholder="Surname"/>
+                    </div>
+                </div>
+            </div>
+            <!-- email field -->
+            <div class="form-group">
+                <label for="email" class="sr-only">Email</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                        <input [(ngModel)]="customer.Email_Address" type="text" class="form-control" name="email" id="email"  placeholder="Email"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="sr-only">Password</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                        <input [(ngModel)]="customer.Password" type="password" class="form-control" name="password" id="password"  placeholder="Password"/>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> I agree to terms and condition.
+                </label>
+            </div>
+            <button type="submit" class="button" (click)="savecustomer()">Register</button>
+              
+            <div class="form-group"></div>
+            </form> 
+		</div>
+	</div>
+</div>
